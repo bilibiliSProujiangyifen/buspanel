@@ -1,0 +1,102 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://i.ytimg.com/vi/uRI6FhxKWZo/maxresdefault.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+#message-wrapper {
+    width: 100%;
+    max-width: 2000px;
+    max-height: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Add space between items */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    white-space: normal; /* Allow items to be on multiple lines */
+}
+
+.white-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 20px; /* Increase font size */
+    padding: 20px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex: 1 1 calc(15% - 40px); /* Adjust the percentage to control how many boxes fit in a row */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    max-width: 100%; /* Ensure boxes don't overflow the screen */
+}
+
+.white-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.route, .co, .minute {
+    margin: 0 10px;
+}
+
+.unit {
+    font-size: 18px; /* Increase font size */
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+.time-box {
+    width: 100%;
+    background-color: rgba(0, 123, 255, 0.9);
+    color: #fff;
+    font-size: 26px; /* Increase font size */
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .white-box {
+        flex: 1 1 calc(33% - 40px); /* Adjust the percentage for smaller screens */
+    }
+    .route, .co, .minute {
+        font-size: 16px; /* Decrease font size on smaller screens */
+    }
+    .unit {
+        font-size: 14px; /* Decrease font size on smaller screens */
+    }
+    .time-box {
+        font-size: 20px; /* Decrease font size on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .white-box {
+        flex: 1 1 100%; /* Stack boxes on top of each other on very small screens */
+    }
+    .route, .co, .minute {
+        font-size: 14px; /* Decrease font size on very small screens */
+    }
+    .unit {
+        font-size: 12px; /* Decrease font size on very small screens */
+    }
+    .time-box {
+        font-size: 18px; /* Decrease font size on very small screens */
+    }
+}
